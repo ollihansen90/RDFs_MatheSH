@@ -138,7 +138,7 @@ class Baum():
         zeichne(self.tree, 0,0.9,1)
         st.pyplot(fig)
 
-
+st.set_page_config(layout="wide")
 data, label = np.load("data.npy"), np.load("label.npy")
 idc = np.random.permutation(len(data))[:int(0.8*len(data))]
 data, label = data[idc], label[idc]
@@ -147,8 +147,9 @@ baum = Baum(max_tiefe=4, mode="rand")
 baum.fit(data, label)
 
 st.title(":seedling: Eigener Entscheidungsbaum :deciduous_tree:")
-col1, col2 = st.columns([1,1])
+col1, col2 = st.columns([1,2])
 with col1:
+    st.write("Klassifiziere folgende Punkte:")
     st.markdown("""
                 |Punkt| X0 | X1 | X2 | X3 | 
                 |---|---|---|---|---|
