@@ -147,4 +147,16 @@ baum = Baum(max_tiefe=4, mode="rand")
 baum.fit(data, label)
 
 st.title(":seedling: Eigener Entscheidungsbaum :deciduous_tree:")
-baum.draw()
+col1, col2 = st.columns([1,1])
+with col1:
+    st.markdown("""
+                |Punkt| X0 | X1 | X2 | X3 | 
+                |---|---|---|---|---|
+                |1|-1.69|3.62|-1.86|-7.49|
+                |2|-6.05|-1.18|0.57|5.58|
+                |3|0.26|-0.35|1.4|2.9|
+                |4|1.22|-1.15|-1.42|-7.15|
+                |5|1.39|0.26|0.95|1.44
+""")
+with col2:
+    baum.draw()
