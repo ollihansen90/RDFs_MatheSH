@@ -160,3 +160,4 @@ with col1:
 """)
 with col2:
     baum.draw()
+    st.button("Neuer Baum")
